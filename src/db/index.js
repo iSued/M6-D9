@@ -1,8 +1,8 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const User = require("./user");
-const Category = require("./category");
-const Product = require("./product");
-const Cart = require("./cart");
+const Author = require("./authors");
+const Category = require("./categories");
+const Review = require("./reviews");
+const Article = require("./articles");
 const sequelize = new Sequelize(
   process.env.PGDATABASE,
   process.env.PGUSER,
@@ -14,10 +14,10 @@ const sequelize = new Sequelize(
 );
 
 const models = {
-  User: User(sequelize, DataTypes),
+  Author: Author(sequelize, DataTypes),
   Category: Category(sequelize, DataTypes),
-  Product: Product(sequelize, DataTypes),
-  Cart: Cart(sequelize, DataTypes),
+  Article: Article(sequelize, DataTypes),
+  Review: Review(sequelize, DataTypes),
 };
 
 Object.keys(models).forEach((modelName) => {

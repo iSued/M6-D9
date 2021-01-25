@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     { timestamps: false }
   );
   Author.associate = (models) => {
-    Author.hasMany(models.Reviews);
+    Author.hasMany(models.Review);
     Author.hasMany(models.Article);
   };
   return Author;
